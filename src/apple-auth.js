@@ -109,7 +109,10 @@ class AppleAuth {
                             reject("AppleAuth Error - An error occurred while getting response from Apple's servers: " + error + " - " + error?.response?.data?.error_description);
                         }
                         // If customConfig.debug isn't set, output in this format.                       
-                        const responseData = response.response?.data
+                        const responseData = error?.response?.data
+
+                        console.log({responseData});
+
                         reject(
                             `AppleAuth Error - An error occurred while getting response from Apple's servers: 
                             ${response}${responseData ? (" | " + responseData) : ""}`
