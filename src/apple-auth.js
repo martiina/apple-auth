@@ -115,7 +115,7 @@ class AppleAuth {
 
                         reject(
                             `AppleAuth Error - An error occurred while getting response from Apple's servers: 
-                            ${response}${responseData ? (" | " + responseData) : ""}`
+                            ${responseData ? (" | " + responseData?.error) : ""}`
                         );
                     });
                 }).catch((err) => {
